@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #00BFFF;
+    }
+
+    .projects {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+      width: 95%;
+      max-width: 1200px;
+    }
+
+    .project {
+      background: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.01);
+    }
+
+    .project-header {
+      padding: 1rem 1.5rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background-color: #2a2a2a;
+      border-bottom: 1px solid #333;
+      color: #00BFFF;
+    }
+
+    .project-description {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .tags {
+      padding: 0 1.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background-color: #333;
+      color: #00BFFF;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Portfolio</h1>
+  <div class="projects">
+    <div class="project">
+      <div class="project-header">Travel Agency</div>
+      <iframe src="https://agency-seu-destino.netlify.app/"></iframe>
+      <div class="project-description">
+        Uma landing page moderna para uma agência de viagens fictícia. Destaque para imagens atrativas e layout responsivo.
+      </div>
+      <div class="tags">
+        <span class="tag">VUEjs</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">Campaign Page</div>
+      <iframe src="https://portifolio001.netlify.app/"></iframe>
+      <div class="project-description">
+        Página promocional para campanha de marketing com call-to-actions claros e identidade visual marcante.
+      </div>
+      <div class="tags">
+        <span class="tag">VUEjs</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header">Bakery</div>
+      <iframe src="https://portifolio004.netlify.app/"></iframe>
+      <div class="project-description">
+        Website de uma padaria fictícia com foco em menus, contato e localização, com estilo acolhedor e amigável.
+      </div>
+      <div class="tags">
+        <span class="tag">VUEjs</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+  </div>
+  <footer>© 2025 Jonatan Keller</footer>
+</body>
+</html>

@@ -37,6 +37,8 @@
       overflow: hidden;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
     }
 
     .project:hover {
@@ -85,9 +87,14 @@
       color: #777;
     }
 
+    /* Oculta iframe no mobile */
     @media (max-width: 600px) {
       iframe {
-        height: 320px;
+        display: none;
+      }
+
+      .project {
+        cursor: pointer;
       }
     }
   </style>
@@ -95,7 +102,7 @@
 <body>
   <h1>Portfolio</h1>
   <div class="projects">
-    <div class="project">
+    <a href="https://agency-seu-destino.netlify.app/" target="_blank" class="project">
       <div class="project-header">Travel Agency</div>
       <iframe src="https://agency-seu-destino.netlify.app/"></iframe>
       <div class="project-description">
@@ -105,9 +112,9 @@
         <span class="tag">VUEjs</span>
         <span class="tag">JavaScript</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project">
+    <a href="https://portifolio001.netlify.app/" target="_blank" class="project">
       <div class="project-header">Campaign Page</div>
       <iframe src="https://portifolio001.netlify.app/"></iframe>
       <div class="project-description">
@@ -117,9 +124,9 @@
         <span class="tag">VUEjs</span>
         <span class="tag">JavaScript</span>
       </div>
-    </div>
+    </a>
 
-    <div class="project">
+    <a href="https://portifolio004.netlify.app/" target="_blank" class="project">
       <div class="project-header">Bakery</div>
       <iframe src="https://portifolio004.netlify.app/"></iframe>
       <div class="project-description">
@@ -129,7 +136,7 @@
         <span class="tag">VUEjs</span>
         <span class="tag">JavaScript</span>
       </div>
-    </div>
+    </a>
   </div>
   <footer>© 2025 Jonatan Keller</footer>
 </body>

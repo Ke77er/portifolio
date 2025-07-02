@@ -202,20 +202,30 @@
 
     .project-preview {
       position: relative;
-      height: 250px;
+      height: 280px;
       overflow: hidden;
       background: var(--bg-card);
+      border-radius: 16px 16px 0 0;
     }
 
     .project-preview iframe {
       width: 100%;
       height: 100%;
       border: none;
-      transition: transform 0.3s ease;
+      transition: all 0.4s ease;
+      transform: scale(0.8);
+      transform-origin: top left;
+      opacity: 0;
+      border-radius: 8px;
     }
 
-    .project-card:hover .project-preview iframe {
-      transform: scale(1.05);
+    .project-preview iframe.loaded {
+      opacity: 1;
+      transform: scale(0.8);
+    }
+
+    .project-card:hover .project-preview iframe.loaded {
+      transform: scale(0.85);
     }
 
     .project-overlay {
@@ -224,12 +234,14 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(139, 92, 246, 0.95));
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
     }
 
     .project-card:hover .project-overlay {
@@ -239,7 +251,33 @@
     .project-overlay i {
       font-size: 3rem;
       color: white;
+      margin-bottom: 1rem;
       animation: pulse 2s infinite;
+    }
+
+    .project-overlay .overlay-text {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .loading-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border-color);
+      border-top: 3px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
     .project-content {
@@ -437,21 +475,19 @@
       }
 
       .project-preview {
-        height: 200px;
+        height: 220px;
       }
 
       .project-preview iframe {
-        display: none;
+        transform: scale(0.7);
       }
 
-      .project-overlay {
-        opacity: 1;
-        background: var(--bg-card);
+      .project-preview iframe.loaded {
+        transform: scale(0.7);
       }
 
-      .project-overlay i {
-        color: var(--primary-color);
-        animation: none;
+      .project-card:hover .project-preview iframe.loaded {
+        transform: scale(0.75);
       }
 
       .project-content {
@@ -485,6 +521,22 @@
       .stats {
         grid-template-columns: 1fr;
       }
+
+      .project-preview {
+        height: 200px;
+      }
+
+      .project-preview iframe {
+        transform: scale(0.6);
+      }
+
+      .project-preview iframe.loaded {
+        transform: scale(0.6);
+      }
+
+      .project-card:hover .project-preview iframe.loaded {
+        transform: scale(0.65);
+      }
     }
   </style>
 </head>
@@ -493,8 +545,8 @@
     <h1>Jonatan Keller</h1>
     <p class="subtitle">Desenvolvedor Frontend</p>
     <p class="description">
-      Criando experiências digitais modernas e funcionais com foco em performance, 
-      usabilidade e design responsivo. Especializado em Vue.js e tecnologias web modernas.
+      Criando experiências digitais que funcionam de verdade. 
+      Especializado em Vue.js e apaixonado por código limpo e interfaces que fazem sentido.
     </p>
   </header>
 
@@ -533,9 +585,11 @@
     <section id="projetos" class="projects-grid">
       <article class="project-card" style="--delay: 0s">
         <div class="project-preview">
-          <iframe src="https://agency-seu-destino.netlify.app/" loading="lazy"></iframe>
+          <div class="loading-spinner"></div>
+          <iframe src="https://agency-seu-destino.netlify.app/" loading="lazy" title="Travel Agency Preview"></iframe>
           <div class="project-overlay">
             <i class="fas fa-external-link-alt"></i>
+            <span class="overlay-text">Ver projeto completo</span>
           </div>
         </div>
         <div class="project-content">
@@ -544,9 +598,8 @@
             Travel Agency
           </h3>
           <p class="project-description">
-            Landing page moderna e elegante para uma agência de viagens fictícia. 
-            Destaque para imagens atrativas, animações suaves e layout totalmente responsivo 
-            que proporciona uma experiência imersiva ao usuário.
+            Site para uma agência de viagens com visual moderno e animações que prendem a atenção. 
+            Foquei em criar uma experiência que desperta a vontade de viajar.
           </p>
           <div class="project-tags">
             <span class="tag">Vue.js</span>
@@ -565,9 +618,11 @@
 
       <article class="project-card" style="--delay: 0.2s">
         <div class="project-preview">
-          <iframe src="https://portifolio001.netlify.app/" loading="lazy"></iframe>
+          <div class="loading-spinner"></div>
+          <iframe src="https://portifolio001.netlify.app/" loading="lazy" title="Campaign Page Preview"></iframe>
           <div class="project-overlay">
             <i class="fas fa-external-link-alt"></i>
+            <span class="overlay-text">Ver projeto completo</span>
           </div>
         </div>
         <div class="project-content">
@@ -576,9 +631,8 @@
             Campaign Page
           </h3>
           <p class="project-description">
-            Página promocional estratégica para campanha de marketing digital. 
-            Desenvolvida com call-to-actions claros, identidade visual marcante e 
-            otimizada para conversão de leads.
+            Página de campanha focada em conversão. Design direto ao ponto com 
+            call-to-actions bem posicionados para gerar resultados.
           </p>
           <div class="project-tags">
             <span class="tag">Vue.js</span>
@@ -597,9 +651,11 @@
 
       <article class="project-card" style="--delay: 0.4s">
         <div class="project-preview">
-          <iframe src="https://portifolio004.netlify.app/" loading="lazy"></iframe>
+          <div class="loading-spinner"></div>
+          <iframe src="https://portifolio004.netlify.app/" loading="lazy" title="Bakery Website Preview"></iframe>
           <div class="project-overlay">
             <i class="fas fa-external-link-alt"></i>
+            <span class="overlay-text">Ver projeto completo</span>
           </div>
         </div>
         <div class="project-content">
@@ -608,9 +664,8 @@
             Bakery Website
           </h3>
           <p class="project-description">
-            Website completo para uma padaria fictícia com foco em apresentação de produtos, 
-            informações de contato e localização. Design acolhedor que transmite a 
-            atmosfera familiar do negócio.
+            Site completo para uma padaria com aquele clima acolhedor que todo mundo gosta. 
+            Cardápio, localização e tudo que o cliente precisa saber.
           </p>
           <div class="project-tags">
             <span class="tag">Vue.js</span>
@@ -631,10 +686,10 @@
 
   <footer class="footer">
     <div class="footer-content">
-      <h3>Vamos trabalhar juntos?</h3>
+      <h3>Bora trabalhar juntos?</h3>
       <p>
-        Estou sempre aberto a novos desafios e oportunidades. 
-        Entre em contato para discutirmos seu próximo projeto.
+        Sempre aberto para novos projetos e desafios interessantes. 
+        Manda uma mensagem e vamos conversar sobre suas ideias.
       </p>
       <div class="social-links">
         <a href="mailto:jonatan@email.com" class="social-link" title="Email">
@@ -671,11 +726,50 @@
       });
     });
 
-    // Add loading animation for iframes
+    // Enhanced iframe loading with better visual feedback
     document.querySelectorAll('iframe').forEach(iframe => {
+      const spinner = iframe.parentElement.querySelector('.loading-spinner');
+      
+      // Set initial state
+      iframe.style.opacity = '0';
+      iframe.style.transform = 'scale(0.8)';
+      
       iframe.addEventListener('load', function() {
-        this.style.opacity = '1';
+        // Hide spinner
+        if (spinner) {
+          spinner.style.opacity = '0';
+          setTimeout(() => {
+            spinner.style.display = 'none';
+          }, 300);
+        }
+        
+        // Show iframe with smooth transition
+        setTimeout(() => {
+          this.classList.add('loaded');
+          this.style.opacity = '1';
+        }, 100);
       });
+
+      // Handle iframe errors
+      iframe.addEventListener('error', function() {
+        if (spinner) {
+          spinner.innerHTML = '<i class="fas fa-exclamation-triangle" style="color: var(--accent-color); font-size: 1.5rem;"></i>';
+        }
+      });
+
+      // Timeout fallback for slow loading
+      setTimeout(() => {
+        if (!iframe.classList.contains('loaded')) {
+          if (spinner) {
+            spinner.style.opacity = '0';
+            setTimeout(() => {
+              spinner.style.display = 'none';
+            }, 300);
+          }
+          iframe.classList.add('loaded');
+          iframe.style.opacity = '1';
+        }
+      }, 8000);
     });
 
     // Intersection Observer for animations
@@ -695,6 +789,15 @@
     // Observe all animated elements
     document.querySelectorAll('.project-card, .stat-item').forEach(el => {
       observer.observe(el);
+    });
+
+    // Add subtle parallax effect to background
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallax = document.body;
+      const speed = scrolled * 0.5;
+      
+      parallax.style.transform = `translateY(${speed}px)`;
     });
   </script>
 </body>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jonatan Keller - Desenvolvedor Frontend</title>
+  <title>Jonatan Keller - Frontend Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -154,18 +154,22 @@
 
     .project-hero {
       position: relative;
-      height: 180px;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 220px;
+      overflow: hidden;
+      background: var(--bg-card);
     }
 
-    .project-icon {
-      font-size: 3.5rem;
-      color: white;
-      opacity: 0.95;
+    .project-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
+
+    .project-card:hover .project-hero img {
+      transform: scale(1.05);
+    }
+
 
     .project-content {
       padding: 1.75rem;
@@ -363,11 +367,7 @@
       }
 
       .project-hero {
-        height: 150px;
-      }
-
-      .project-icon {
-        font-size: 2.75rem;
+        height: 180px;
       }
 
       .project-content {
@@ -403,11 +403,7 @@
       }
 
       .project-hero {
-        height: 130px;
-      }
-
-      .project-icon {
-        font-size: 2.25rem;
+        height: 160px;
       }
     }
   </style>
@@ -415,52 +411,52 @@
 <body>
   <header class="header">
     <h1>Jonatan Keller</h1>
-    <p class="subtitle">Desenvolvedor Frontend</p>
+    <p class="subtitle">Frontend Developer</p>
     <p class="description">
-      Criando experiências digitais que funcionam de verdade. 
-      Especializado em Vue.js e apaixonado por código limpo e interfaces que fazem sentido.
+      Creating digital experiences that truly work.
+      Specialized in Vue.js and passionate about clean code and meaningful interfaces.
     </p>
   </header>
 
   <nav class="nav">
-    <a href="#projetos" class="nav-item">Projetos</a>
-    <a href="#sobre" class="nav-item">Sobre</a>
-    <a href="#contato" class="nav-item">Contato</a>
+    <a href="#projects" class="nav-item">Projects</a>
+    <a href="#about" class="nav-item">About</a>
+    <a href="#contact" class="nav-item">Contact</a>
   </nav>
 
   <div class="container">
     <section class="stats">
       <div class="stat-item">
         <span class="stat-number">3+</span>
-        <span class="stat-label">Projetos Concluídos</span>
+        <span class="stat-label">Projects Completed</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">2+</span>
-        <span class="stat-label">Anos de Experiência</span>
+        <span class="stat-label">Years of Experience</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">100%</span>
-        <span class="stat-label">Projetos Responsivos</span>
+        <span class="stat-label">Responsive Projects</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">Vue.js</span>
-        <span class="stat-label">Especialização</span>
+        <span class="stat-label">Specialization</span>
       </div>
     </section>
 
-    <section id="projetos" class="projects-grid">
+    <section id="projects" class="projects-grid">
       <article class="project-card">
         <div class="project-hero">
-          <i class="fas fa-plane project-icon"></i>
+          <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel Agency Preview" />
         </div>
         <div class="project-content">
           <h3 class="project-title">Travel Agency</h3>
           <ul class="project-features">
-            <li>Design moderno focado em despertar o desejo de viajar</li>
-            <li>Animações suaves que prendem a atenção do usuário</li>
-            <li>Layout totalmente responsivo para todos os dispositivos</li>
-            <li>Galeria de destinos com imagens de alta qualidade</li>
-            <li>Formulário de contato integrado</li>
+            <li>Modern design focused on inspiring wanderlust</li>
+            <li>Smooth animations that capture user attention</li>
+            <li>Fully responsive layout for all devices</li>
+            <li>Destination gallery with high-quality imagery</li>
+            <li>Integrated contact form</li>
           </ul>
           <div class="project-tags">
             <span class="tag">Vue.js</span>
@@ -471,7 +467,7 @@
           <div class="project-links">
             <a href="https://agency-seu-destino.netlify.app/" target="_blank" class="project-link">
               <i class="fas fa-external-link-alt"></i>
-              Ver Projeto
+              View Project
             </a>
           </div>
         </div>
@@ -479,16 +475,16 @@
 
       <article class="project-card">
         <div class="project-hero">
-          <i class="fas fa-bullhorn project-icon"></i>
+          <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Campaign Page Preview" />
         </div>
         <div class="project-content">
           <h3 class="project-title">Campaign Page</h3>
           <ul class="project-features">
-            <li>Página otimizada para conversão de leads</li>
-            <li>Call-to-actions estrategicamente posicionados</li>
-            <li>Design direto ao ponto, sem distrações</li>
-            <li>Formulários com validação em tempo real</li>
-            <li>Métricas de conversão integradas</li>
+            <li>Optimized for lead conversion</li>
+            <li>Strategically positioned call-to-actions</li>
+            <li>Focused design without distractions</li>
+            <li>Real-time form validation</li>
+            <li>Integrated conversion metrics</li>
           </ul>
           <div class="project-tags">
             <span class="tag">Vue.js</span>
@@ -499,7 +495,7 @@
           <div class="project-links">
             <a href="https://portifolio001.netlify.app/" target="_blank" class="project-link">
               <i class="fas fa-external-link-alt"></i>
-              Ver Projeto
+              View Project
             </a>
           </div>
         </div>
@@ -507,16 +503,16 @@
 
       <article class="project-card">
         <div class="project-hero">
-          <i class="fas fa-bread-slice project-icon"></i>
+          <img src="https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bakery Website Preview" />
         </div>
         <div class="project-content">
           <h3 class="project-title">Bakery Website</h3>
           <ul class="project-features">
-            <li>Site completo com clima acolhedor e familiar</li>
-            <li>Cardápio digital com fotos dos produtos</li>
-            <li>Sistema de localização e horários de funcionamento</li>
-            <li>Área de contato com WhatsApp integrado</li>
-            <li>Design que desperta o apetite</li>
+            <li>Complete site with warm and welcoming atmosphere</li>
+            <li>Digital menu with product photography</li>
+            <li>Location system and business hours</li>
+            <li>Contact area with WhatsApp integration</li>
+            <li>Appetite-inducing design</li>
           </ul>
           <div class="project-tags">
             <span class="tag">Vue.js</span>
@@ -527,7 +523,7 @@
           <div class="project-links">
             <a href="https://portifolio004.netlify.app/" target="_blank" class="project-link">
               <i class="fas fa-external-link-alt"></i>
-              Ver Projeto
+              View Project
             </a>
           </div>
         </div>
@@ -537,10 +533,10 @@
 
   <footer class="footer">
     <div class="footer-content">
-      <h3>Bora trabalhar juntos?</h3>
+      <h3>Let's Work Together</h3>
       <p>
-        Sempre aberto para novos projetos e desafios interessantes. 
-        Manda uma mensagem e vamos conversar sobre suas ideias.
+        Always open to new projects and interesting challenges.
+        Send me a message and let's discuss your ideas.
       </p>
       <div class="social-links">
         <a href="mailto:jonatan@email.com" class="social-link" title="Email">
@@ -557,7 +553,7 @@
         </a>
       </div>
       <div class="copyright">
-        © 2025 Jonatan Keller. Todos os direitos reservados.
+        © 2025 Jonatan Keller. All rights reserved.
       </div>
     </div>
   </footer>
